@@ -20,6 +20,8 @@ services:
             # Mount the deployed app so the pipeline's Deployment stage can
             # 'cd /home/ubuntu/devops-practical && git pull && docker compose ...'
             - /home/ubuntu/devops-practical:/home/ubuntu/devops-practical
+        group_add:
+            - "986"
         expose:
             - "8080"
         networks:
