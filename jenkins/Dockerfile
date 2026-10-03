@@ -30,4 +30,10 @@ RUN jenkins-plugin-cli --plugins \
     timestamper \
     ws-cleanup
 
+# Allow Jenkins to access the host Docker socket
+ARG DOCKER_GID=986
+
+RUN groupadd -for -g ${DOCKER_GID} docker \
+    && usermod -aG ${DOCKER_GID} jenkins
+
 USER jenkins
