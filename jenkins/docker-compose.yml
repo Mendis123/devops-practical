@@ -11,7 +11,7 @@ services:
             context: .
             dockerfile: Dockerfile
             args:
-                DOCKER_GID: "999"
+                DOCKER_GID: "986"
         container_name: jenkins
         restart: unless-stopped
         environment:
